@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    background-color: #818763;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  h1, h3, label  {
+      color: #3d3e3a;
+      font-weight: bold;
+  }
+
+  input, select {
+    background-color: #edf1ec;  
+  }
+  
+  p {
+      color: #edf1ec;
+      font-weight: bold;
+  }
+
+  a {
+      text-decoration: none;
+      color: #edf1ec;
+      font-weight: bold;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }

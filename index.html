@@ -10,8 +10,9 @@
     <div class="container">
         <h1>Search for National Parks</h1>
         <form>
+            <div id="stateSearch">
             <label for="state">State</label>
-            <select id="state" name="state"><option value="---">---</option>
+            <select class="state" name="state"><option value="---">---</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -64,14 +65,16 @@
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
             </select>
-            <input type="number" name="number" id="number" min='1' max='10' value="1">
-            <input type="submit" value="search">
+        </div>
+            <button type="button" id="addState" onclick="addToSearch()">+</button>
+            <input type="number" name="number" id="number" value="10">
+            <input type="submit" value="Search">
         </form>
         <section class="results hidden">
             <ul class="resultSearch" alt="placeholder">
 
             </ul>
-            <p id="js-error-message" class="error-message"></p>
+            <p class="js-error-message"></p>
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

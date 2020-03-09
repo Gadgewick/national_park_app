@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 function addToSearch() {
     /*var clicks = 0;
     clicks += 1;*/
@@ -59,13 +58,8 @@ function addToSearch() {
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
     </select>`;
-    $("#stateSearch").append(newSearch);
-    
+    $("#stateSearch").append(newSearch)
 };
-
-
-
- 
 
 function watchForm() {
     $('form').submit(event => {
@@ -77,7 +71,7 @@ function watchForm() {
       var elements = document.getElementsByClassName("state");
       var stateCode = '';
       for(var i=0; i<elements.length; i++) {
-      stateCode += (elements[i].value + "&");
+        stateCode += (elements[i].value + "&");
       }
       console.log(stateCode)
       var searchAmount = $("#number").val();

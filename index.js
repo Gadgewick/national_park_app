@@ -69,9 +69,9 @@ function watchForm() {
       const apiKey = 'OGRW36WX7d2eGQnyiBo9nIl5o4dDEANU5ei6qyte';
       const baseUrl = 'https://api.nps.gov/api/v1/parks'; 
       var elements = document.getElementsByClassName("state");
-      var stateCode = '';
+      var stateCode = [];
       for(var i=0; i<elements.length; i++) {
-        stateCode += (elements[i].value + "&");
+        stateCode.push(elements[i].value);
       }
       console.log(stateCode)
       var searchAmount = $("#number").val();
@@ -81,8 +81,9 @@ function watchForm() {
   }
 
   function getNationalParkInfo(baseUrl, stateCode, searchAmount, apiKey) {
-    console.log(`${baseUrl}?stateCode=${stateCode}limit=${searchAmount}&api_key=${apiKey}`);
-      fetch (`${baseUrl}?stateCode=${stateCode}limit=${searchAmount}&api_key=${apiKey}`)
+    var encodeStateCode = encodeURI(stateCode);
+    console.log(`${baseUrl}?stateCode=${encodeStateCode}&limit=${searchAmount}&api_key=${apiKey}`);
+      fetch (`${baseUrl}?stateCode=${encodeStateCode}&limit=${searchAmount}&api_key=${apiKey}`)
       .then(response => {
         if (response.ok) {
             return response.json();
